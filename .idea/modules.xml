@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/ApiMeth/ApiMeth.iml" filepath="$PROJECT_DIR$/ApiMeth/ApiMeth.iml" />
+      <module fileurl="file://$PROJECT_DIR$/DBnetwork/DBnetwork.iml" filepath="$PROJECT_DIR$/DBnetwork/DBnetwork.iml" />
+      <module fileurl="file://$PROJECT_DIR$/PetProject.iml" filepath="$PROJECT_DIR$/PetProject.iml" />
+    </modules>
+  </component>
+</project>
