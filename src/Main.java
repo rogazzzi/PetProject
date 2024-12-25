@@ -1,18 +1,27 @@
 import ApiClient.ClientMain;
+import ApiServerModule.StartServer;
 
-import java.io.Console;
 import java.io.IOException;
 
 
 public class Main {
     public static void main(String[] args) {
-        //ApiServer as = new ApiServer();
-        //as.StartServer();
+        // get started server api on new thread
+        Thread server_thread = new Thread(new StartServer());
+        server_thread.start();
+        // get started server api on new thread
         SomeInterface();
-        ClientMain ac = new ClientMain();
-        StringBuilder content = ac.SendRequest("Test");
-        System.out.println(content);
+        if (server_thread.isAlive()) {
+            server_thread.interrupt();
+            System.out.println("server shutdown");
+        }
+        //unused
+//        ClientMain ac = new ClientMain();
+//        StringBuilder content = ac.SendRequest("Test");
+//        System.out.println(content);
+        //unused
     }
+
     public static void SomeInterface(){
 
         while (true){
@@ -29,11 +38,13 @@ public class Main {
                     System.out.println(content);
                 }
                 else {
-                    throw new RuntimeException();
+                    break;
                 }
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
         }
     }
+
+
 }
