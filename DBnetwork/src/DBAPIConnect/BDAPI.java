@@ -3,7 +3,7 @@ package DBAPIConnect;
 import java.sql.*;
 
 public class BDAPI {
-    final String urlConnect = "jdbc:postgresql://localhost/testdb?user=postgres&password=qweqwe";
+    final String urlConnect = "jdbc:postgresql://localhost/online_store?user=postgres&password=qwe";
     StringBuilder content = new StringBuilder();
     public StringBuilder DBAPIConnect (String Method){
         Connection con = GetConnect();
@@ -23,7 +23,7 @@ public class BDAPI {
 
         try {
             Statement st = con.createStatement();
-            ResultSet rs = st.executeQuery("SELECT \"Name\" FROM \"testTable\";");
+            ResultSet rs = st.executeQuery("SELECT \"last_name\" FROM \"customers\";");
             return ReadDBData(rs);
         } catch (SQLException e) {
             throw new RuntimeException(e);
